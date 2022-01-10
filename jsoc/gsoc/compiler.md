@@ -1,27 +1,22 @@
 # Compiler Projects – Summer of Code
 
-I have a number of other compiler projects I'm currently working on. Please contact me for
-additional details and let me know what specifically interests you about this area of contribution
-and we can tailor your project to suit you together.
+We have a number of compiler projects available for interested participants. Please contact one of the mentors for
+additional details and let us know what specifically interests you about this area of contribution. Together, we can tailor your project to best suit you. We are flexible and open to new ideas besides the ones listed below, but these should give a good overview of the kinds of ongoing projects in this area.
 
 - **Escape analysis:**
 
-  A classic problem in compiler analysis! We have an existing AbstractInterpreter framework for
-  managing inter-procedural analysis of type through data-flow analysis. However, for escape
-  information, currently we only do very limited, local inference, which greatly limits optimization
-  potential to places with inlining. The schedule for the project would be to start by writing some
-  example programs that would most benefit from this. Next, you would identify what information is
-  required to optimize those, and together we'll design a framework to compute that information.
-  Finally, you'll get to the easy part: actually coding and putting those plans into practice. Along
-  the way, you'll be mentored in submitting many smaller PRs to fix any issues you notice along the
+  A classic problem in compiler analysis! We have recently introduced an [inter-procedural escape analysis pass](https://github.com/JuliaLang/julia/pull/42465). However, this pass is very new and there are still many possibilities for a project in this area --- some examples include improving the analysis itself, or working on optimization passes that utilize the newfound escape information. The schedule for the project would be as follows: first, you would start by writing some example programs that would benefit from escape information. Perhaps you've found an area where the current optimizations aren't doing all that they could, or you have an idea for a new optimization that utilizes knowledge of escapes. Next, you would identify what specific information is needed to required to optimize your program, and together we'll improve the existing framework to accurately compute that information. Finally, you'll get to the easy part: actually coding and putting those plans into practice. Along
+  the way, you'll be mentored in submitting many smaller PRs to fix issues and make improvements you notice along the
   journey.
 
 - **Optimization passes:**
 
   Another classic compiler challenge! We have some basic optimization passes (inlining, basic DCE,
   SROA), but currently many other interesting passes simply don't yet exist, or have a partial PR,
-  but need significant effort to finish. For this proposal, we can work together to define which
-  optimizations we could tackle next.
+  but need significant effort to finish. There is of course overlap with the escape analysis project, but not that there are many areas for improvement completely outside of escape-related optimizations. For this proposal, we can work together to define which
+  optimization to tackle next, and figure out if there is existing work to base our approach on.
+  
+- **Compiler plug-in project:**
 
 - **Investigating OrcJIT v2 improvements:**
 
@@ -53,7 +48,7 @@ and we can tailor your project to suit you together.
 **Recommended Skills**: Most of these projects involve algorithms work, requiring
 a willingness and interest in seeing how to integrate with a large system.
 
-**Mentors**: [Jameson Nash](https://github.com/vtjnash)
+**Mentors**: [Jameson Nash](https://github.com/vtjnash), [Ian Atol](https://github.com/ianatol)
 
 ## Improving test coverage
 
@@ -105,6 +100,6 @@ compile time) while other areas are over-covered (greatly increasing the duratio
 benefit) and some tests may not be configured appropriately for statistical power. Furthermore, the
 current reports are very primitive and can only do a basic pair-wise comparison, while graphs and
 other interactive tooling would be more valuable. Thus, there would be many great projects for a
-summer student to tackle here!
+summer participant to tackle here!
 
 **Contact:** [Jameson Nash](https://github.com/vtjnash), [Tim Besard](https://github.com/maleadt)
